@@ -1,0 +1,7 @@
+# Ignore main test file
+main.c
+
+# Ignore compiled files
+*.o
+*.out
+a.out
