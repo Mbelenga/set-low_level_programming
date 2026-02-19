@@ -1,7 +1,8 @@
 # Ignore main test file
 main.c
+c
 
 # Ignore compiled files
 *.o
 *.out
-a.out
+a.outc
