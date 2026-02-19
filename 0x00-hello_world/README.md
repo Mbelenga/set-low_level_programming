@@ -51,7 +51,7 @@ By completing this project, you should understand:
 
 ---
 
-## 🚀 Example Program
+## 🚀 Example
 
 ```c
 #include <stdio.h>
