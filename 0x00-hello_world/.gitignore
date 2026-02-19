@@ -1,4 +1,6 @@
 # Ignore main test file
+main.o
+main.s
 main.c
 c
 
