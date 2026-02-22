@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 /**
- * main - Entry pont of my program
+ * main - Entry point of my program
  *
- * Description: assigning a random number
+ * Description: Assigning a value
  * Return: Always 0
  */
 int main(void)
@@ -22,4 +23,3 @@ else
 }
 	return (0);
 }
-
