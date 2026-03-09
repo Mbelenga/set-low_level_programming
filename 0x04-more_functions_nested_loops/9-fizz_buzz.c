@@ -23,5 +23,12 @@ int main(void)
 				printf("Fizz");
 			}
 		}
+		else
+		{
+			if (index % 5 == 0)
+			{
+				printf("Buzz");
+			}
+		}
 	}
 }
