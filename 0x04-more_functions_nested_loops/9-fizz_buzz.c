@@ -2,11 +2,11 @@
 
 /**
  * main - entry point of my program
- * 
+ *
  * Description: prints numbers from 1 to 100
  * Return: Always 0
  */
-int mainvoid()
+int main(void)
 {
 	int index;
 
@@ -15,6 +15,13 @@ int mainvoid()
 		if (index % 3 == 0 && index % 5 == 0)
 		{
 			printf("FizzBuzz");
+		}
+		else
+		{
+			if (index % 3 == 0)
+			{
+				printf("Fizz");
+			}
 		}
 	}
 }
