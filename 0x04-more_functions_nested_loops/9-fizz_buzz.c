@@ -16,19 +16,23 @@ int main(void)
 		{
 			printf("FizzBuzz");
 		}
-		else
+		else if (index % 3 == 0)
 		{
-			if (index % 3 == 0)
-			{
-				printf("Fizz");
-			}
+			printf("Fizz");
+		}
+		else if (index % 5 == 0)
+		{
+			printf("Buzz");
 		}
 		else
 		{
-			if (index % 5 == 0)
-			{
-				printf("Buzz");
-			}
+			printf("%d", index);
+		}
+		if  (index != 100)
+		{
+			printf(" ");
 		}
 	}
+	printf("\n");
+	return (0);
 }
