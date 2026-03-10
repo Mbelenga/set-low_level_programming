@@ -2,28 +2,28 @@
 /**
  * print_triangle - A function that prints a triangle
  * @size: Triangle's height
- * 
+ *
  * Return: Always 0
  */
 void print_triangle(int size)
 {
 	int row;
 	int space;
-	int harsh;
+	int hash;
 
 	if (size <= 0)
 	{
-		_putchar('\n')
+		_putchar('\n');
 	}
 	else
 	{
 		for (row = 1; row <= size; row++)
 		{
-			for (space = size - range; space > 0; range++)
+			for (space = size - row; space > 0; space--)
 			{
 				_putchar(' ');
 			}
-			for (hash = 0; hash < range; hash++)
+			for (hash = 0; hash < row; hash++)
 			{
 				_putchar('#');
 			}
