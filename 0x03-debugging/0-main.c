@@ -1,0 +1,16 @@
+#include "main.h"
+/**
+ * main - Entry point of my program
+ *
+ * Description: tests the function that prints, if integer is positive or negative
+ * Return: 0
+ */
+int main(void)
+{
+    int index;
+
+    index = 0;
+    positive_or_negative(index);
+
+    return (0);
+}
