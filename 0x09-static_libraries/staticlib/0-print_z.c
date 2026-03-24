@@ -1,16 +1,10 @@
-#include <unistd.h>
+#include "my_functions.h"
 
 /**
- * main - Entry point of my program
- *
- * Return: Always 0
+ * print_z - prints z followed by a new line
  */
-int main(void)
+void print_z(void)
 {
-	char c = 'z';
-
-	write(1, &c, 1);
-	write(1, "\n", 1);
-
-	return (0);
+	_putchar('z');
+	_putchar('\n');
 }
