@@ -8,8 +8,6 @@ It covers basic and advanced low-level programming concepts, focusing on memory 
 
 Each directory represents a separate project with its own tasks and README file.
 
----
-
 ## 🎯 Objectives
 
 The goal of this repository is to:
