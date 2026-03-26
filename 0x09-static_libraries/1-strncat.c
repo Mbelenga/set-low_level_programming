@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * *_strncat - funtion that contatenate two strings using n-bytes
+ * *_strncat - funtion that concatenate two strings using n-bytes
  * from src
  * @src: The string to be concatenated
  * @dest: The string to be concatenated to
