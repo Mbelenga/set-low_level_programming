@@ -1,7 +1,3 @@
-Here’s a clear **README-style explanation** for **0x0B-preprocessor (C programming)** — this topic usually covers how the C preprocessor works and the common directives.
-
----
-
 # 📘 0x0B-preprocessor
 
 ## 📌 Description
