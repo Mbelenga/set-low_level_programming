@@ -3,27 +3,26 @@
 #include "main.h"
 
 /**
- * _calloc - a function that allocates memory for an array, using malloc
- * @size: bytes to be allocated
- * @nmemb: elements
- * Return: a pointer to the allocated memory else, NULL
+ * _calloc - allocates memory for an array
+ * @nmemb: number of elements
+ * @size: size of each element
+ *
+ * Return: pointer to allocated memory, or NULL on failure
  */
-
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
 
 	if (nmemb == 0 || size == 0)
-	{
 		return (NULL);
-	}
-	ptr = malloc(size * nmemb);
+
+	ptr = malloc(nmemb * size);
 
 	if (ptr == NULL)
-	{
 		return (NULL);
-	}
-	memset(ptr, 0, size * nmemb);
+
+	memset(ptr, 0, nmemb * size);
+
 	return (ptr);
 }
 
