@@ -1,69 +1,55 @@
 #include "hash_tables.h"
-#include <stdlib.h>
 #include <string.h>
 
 /**
  * hash_table_set - adds an element to the hash table
- * @ht: pointer to the hash table
- * @key: key (cannot be an empty string)
+ * @ht: hash table you want to add or update the key/value to
+ * @key: the key (can not be an empty string)
  * @value: value associated with the key
+ * value must be duplicated. value can be an empty string
  *
- * Return: 1 on success, 0 on failure
+ * Return: 1 if it succeeded || 0 otherwise
+ * In case of collision, add the new node at the beginning of the list
  */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node, *current;
-	unsigned long int index;
-	char *dup_key, *dup_value;
+	hash_node_t *new;
+	unsigned long int i, index;
+	char *new_value;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
+	new_value = strdup(value);
+	if (new_value == NULL)
+		return (0);
+
 	index = key_index((const unsigned char *)key, ht->size);
 
-	/* Check if the key already exists */
-	current = ht->array[index];
-	while (current != NULL)
+	for (i = index; ht->array[i]; i++)
 	{
-		if (strcmp(current->key, key) == 0)
+		if (strcmp(ht->array[i]->key, key) == 0)
 		{
-			dup_value = strdup(value);
-			if (dup_value == NULL)
-				return (0);
-
-			free(current->value);
-			current->value = dup_value;
+			free(ht->array[i]->value);
+			ht->array[i]->value = new_value;
 			return (1);
 		}
-		current = current->next;
 	}
-
-	/* Create a new node */
-	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL)
-		return (0);
-
-	dup_key = strdup(key);
-	if (dup_key == NULL)
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
 	{
-		free(new_node);
+		free(new_value);
 		return (0);
 	}
-
-	dup_value = strdup(value);
-	if (dup_value == NULL)
+	new->key = strdup(key);
+	if (new->key == NULL)
 	{
-		free(dup_key);
-		free(new_node);
+		free(new);
 		return (0);
 	}
-
-	new_node->key = dup_key;
-	new_node->value = dup_value;
-
-	/* Insert at the beginning of the linked list */
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
-
+	new->value = new_value;
+	new->next = ht->array[index];
+	ht->array[index] = new;
 	return (1);
 }
